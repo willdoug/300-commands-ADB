@@ -1,0 +1,305 @@
+300 comandos ADB para brincar
+
+db devices - Lista os dispositivos Android conectados.
+adb shell - Acesso ao shell do dispositivo.
+adb pull <origem> <destino> - Copia um arquivo ou diretório do dispositivo para o computador.
+adb push <origem> <destino> - Copia um arquivo ou diretório do computador para o dispositivo.
+adb reboot - Reinicia o dispositivo Android.
+adb reboot recovery - Reinicia o dispositivo no modo de recuperação.
+adb reboot bootloader - Reinicia o dispositivo no bootloader.
+adb install <caminho_apk> - Instala um aplicativo no dispositivo.
+adb uninstall <nome_pacote> - Desinstala um aplicativo do dispositivo.
+adb shell pm list packages - Lista os pacotes de aplicativos instalados.
+adb shell dumpsys - Exibe informações detalhadas do sistema.
+adb shell settings list system - Lista as configurações do sistema.
+adb shell getprop - Obtém valores de propriedades do sistema.
+adb shell am start -n <nome_pacote>/<nome_atividade> - Inicia uma atividade específica do aplicativo.
+adb shell input text <texto> - Insere texto no dispositivo.
+adb shell input keyevent <código> - Simula o pressionamento de uma tecla.
+adb shell screencap <caminho_arquivo> - Captura uma captura de tela e salva em um arquivo.
+adb shell screenrecord <caminho_arquivo> - Grava a tela do dispositivo e salva em um arquivo.
+adb shell wm size <largura>x<altura> - Define a resolução da tela.
+adb shell am force-stop <nome_pacote> - Força a parada de um aplicativo.
+adb shell am kill <nome_pacote> - Mata um processo de aplicativo.
+adb shell dumpsys battery - Exibe informações detalhadas da bateria.
+adb shell dumpsys meminfo <nome_pacote> - Exibe informações de uso de memória de um aplicativo.
+adb shell dumpsys cpuinfo - Exibe informações de uso da CPU.
+adb shell dumpsys package <nome_pacote> - Exibe informações detalhadas sobre um pacote de aplicativo.
+adb shell dumpsys activity - Exibe informações sobre atividades em execução.
+adb shell dumpsys storage - Exibe informações sobre o armazenamento do dispositivo.
+adb shell dumpsys wifi - Exibe informações sobre redes Wi-Fi.
+adb shell dumpsys bluetooth_manager - Exibe informações sobre dispositivos Bluetooth emparelhados.
+adb shell dumpsys sensorservice - Exibe informações sobre sensores do dispositivo.
+adb shell dumpsys location - Exibe informações sobre serviços de localização.
+adb shell dumpsys appops - Exibe informações sobre permissões de aplicativos.
+adb shell dumpsys package <nome_pacote> | grep -A1 "lastUpdated" - Obtém a data da última atualização de um aplicativo.
+adb shell pm list users - Lista os usuários do dispositivo.
+adb shell pm list features - Lista os recursos suportados pelo dispositivo.
+adb shell pm grant <nome_pacote> <permissão> - Concede uma permissão a um aplicativo.
+adb shell pm revoke <nome_pacote> <permissão> - Revoga uma permissão de um aplicativo.
+adb shell input swipe <x1> <y1> <x2> <y2> - Simula um deslize na tela.
+adb shell input tap <x> <y> - Simula um toque na tela nas coordenadas especificadas.
+adb shell am broadcast -a <ação> - Envia um broadcast com a ação especificada.
+adb shell am start -a android.settings.SETTINGS - Abre a tela de configurações do dispositivo.
+adb shell wm density <densidade> - Define a densidade da tela.
+adb shell wm overscan <esquerda>,<topo>,<direita>,<base> - Ajusta as áreas de overscan da tela.
+adb shell am set-debug-app -w <nome_pacote> - Define um aplicativo como aplicativo de depuração.
+adb shell am clear-debug-app - Remove o aplicativo de depuração definido anteriormente.
+adb shell input keyevent KEYCODE_POWER - Simula o pressionamento da tecla de energia.
+adb shell input keyevent KEYCODE_HOME - Simula o pressionamento da tecla Home.
+adb shell input keyevent KEYCODE_BACK - Simula o pressionamento da tecla Voltar.
+adb shell input keyevent KEYCODE_MENU - Simula o pressionamento da tecla Menu.
+adb shell input keyevent KEYCODE_VOLUME_UP - Simula o pressionamento da tecla de volume para cima.
+adb shell input keyevent KEYCODE_VOLUME_DOWN - Simula o pressionamento da tecla de volume para baixo.
+adb shell input keyevent KEYCODE_CAMERA - Simula o pressionamento da tecla da câmera.
+adb shell input keyevent KEYCODE_POWER_LONGPRESS - Simula a pressão longa da tecla de energia.
+adb shell input keyevent KEYCODE_HEADSETHOOK - Simula o pressionamento do botão de headset.
+adb shell input keyevent KEYCODE_MEDIA_PLAY - Simula o pressionamento da tecla de reprodução de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PAUSE - Simula o pressionamento da tecla de pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE - Simula o pressionamento da tecla de reprodução/pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_STOP - Simula o pressionamento da tecla de parada de mídia.
+adb shell input keyevent KEYCODE_MEDIA_NEXT - Simula o pressionamento da tecla de próxima faixa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PREVIOUS - Simula o pressionamento da tecla de faixa anterior de mídia.
+adb shell input keyevent KEYCODE_MEDIA_REWIND - Simula o pressionamento da tecla de retrocesso de mídia.
+adb shell input keyevent KEYCODE_MEDIA_FAST_FORWARD - Simula o pressionamento da tecla de avanço rápido de mídia.
+adb shell wm rotation <graus> - Define a rotação da tela (0, 90, 180 ou 270 graus).
+adb shell am set-inactive <nome_pacote> true - Define um aplicativo como inativo.
+adb shell am set-inactive <nome_pacote> false - Define um aplicativo como ativo.
+adb shell pm disable-user --user <usuário> <nome_pacote> - Desativa um aplicativo para um usuário específico.
+adb shell pm enable <nome_pacote> - Ativa um aplicativo previamente desativado.
+adb shell input swipe <x1> <y1> <x2> <y2> <duração> - Simula um deslize na tela com duração personalizada.
+adb shell am set-standby-bucket <nome_pacote> <balde> - Define o balde de hibernação de um aplicativo.
+adb shell am get-standby-bucket <nome_pacote> - Obtém o balde de hibernação de um aplicativo.
+adb shell am get-inactive <nome_pacote> - Verifica se um aplicativo está inativo.
+adb shell am instrument -w <nome_pacote>/<nome_teste> - Executa testes instrumentados em um aplicativo.
+adb shell setprop <chave> <valor> - Define uma propriedade do sistema.
+adb shell getprop <chave> - Obtém o valor de uma propriedade do sistema.
+adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp' - Obtém o foco de atividade atual.
+adb shell dumpsys activity recents - Exibe informações sobre as atividades recentes.
+adb shell dumpsys battery unplug - Simula a desconexão do cabo de alimentação.
+adb shell dumpsys battery reset - Redefine as informações da bateria.
+adb shell dumpsys gfxinfo <nome_pacote> framestats - Exibe informações sobre o desempenho gráfico de um aplicativo.
+adb shell dumpsys wifi | grep -E 'SSID|BSSID|frequency|level' - Exibe informações sobre redes Wi-Fi disponíveis.
+adb shell dumpsys package <nome_pacote> | grep versionName - Obtém a versão do aplicativo.
+adb shell am set-activity-alias <alias> <alvo> - Define um alias de atividade para um alvo.
+adb shell am clear <nome_pacote> - Limpa os dados de um aplicativo.
+adb shell am profile start <nome_pacote> <arquivo_saida> - Inicia a criação de perfil de um aplicativo.
+adb shell am profile stop - Para a criação de perfil de um aplicativo.
+adb shell dumpstate > <caminho_arquivo> - Captura um dump de estado do sistema.
+adb shell pm list libraries <nome_pacote> - Lista as bibliotecas usadas por um aplicativo.
+adb shell settings put system <chave> <valor> - Define uma configuração do sistema.
+adb shell settings get system <chave> - Obtém o valor de uma configuração do sistema.
+adb shell wm dismiss-keyguard - Dispensa a proteção de tela.
+adb shell am start -n com.android.settings/.DevelopmentSettings - Abre as configurações de desenvolvimento.
+adb shell input text "<texto>" - Insere um texto que contém espaços.
+adb shell input keyevent KEYCODE_BRIGHTNESS_DOWN - Simula a tecla de diminuição de brilho.
+adb shell input keyevent KEYCODE_BRIGHTNESS_UP - Simula a tecla de aumento de brilho.
+adb shell input keyevent KEYCODE_AIRPLANE_MODE - Simula a tecla de modo avião.
+adb shell input keyevent KEYCODE_BATTERY_SAVER - Simula a tecla de economia de bateria.
+adb shell input keyevent KEYCODE_HEADSET_HOOK - Simula a tecla de gancho de headset.
+adb shell input keyevent KEYCODE_0 - Simula o pressionamento do número 0.
+adb shell input keyevent KEYCODE_1 - Simula o pressionamento do número 1.
+adb shell input keyevent KEYCODE_POWERON - Simula o pressionamento da tecla
+adb shell input keyevent KEYCODE_SLEEP - Simula a tecla de suspensão.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_VOLUME_MUTE - Simula a tecla de mudo de volume.
+adb shell input keyevent KEYCODE_VOLUME_MUTE|KEYCODE_VOLUME_DOWN|KEYCODE_VOLUME_UP - Simula o pressionamento sequencial das teclas de mudo, volume para baixo e volume para cima.
+adb shell input keyevent KEYCODE_MEDIA_RECORD - Simula a tecla de gravação de mídia.
+adb shell input keyevent KEYCODE_CALL - Simula a tecla de chamada telefônica.
+adb shell input keyevent KEYCODE_ENDCALL - Simula a tecla de encerramento de chamada.
+adb shell input keyevent KEYCODE_SEARCH - Simula a tecla de pesquisa.
+adb shell input keyevent KEYCODE_NOTIFICATION - Simula a tecla de notificação.
+adb shell input keyevent KEYCODE_FOCUS - Simula a tecla de foco.
+adb shell input keyevent KEYCODE_VOICE_ASSIST - Simula a tecla de assistente de voz.
+adb shell input keyevent KEYCODE_BRIGHTNESS_AUTO - Simula a tecla de ajuste de brilho automático.
+adb shell input keyevent KEYCODE_MEDIA_CLOSE - Simula a tecla de fechamento de mídia.
+adb shell input keyevent KEYCODE_TV - Simula a tecla de TV.
+adb shell input keyevent KEYCODE_WINDOW - Simula a tecla de janela.
+adb shell input keyevent KEYCODE_GUIDE - Simula a tecla de guia.
+adb shell input keyevent KEYCODE_DVR - Simula a tecla de DVR.
+adb shell input keyevent KEYCODE_BOOKMARK - Simula a tecla de marcador.
+adb shell input keyevent KEYCODE_CAPTIONS - Simula a tecla de legendas.
+adb shell input keyevent KEYCODE_SETTINGS - Simula a tecla de configurações.
+adb shell input keyevent KEYCODE_TV_POWER - Simula a tecla de liga/desliga da TV.
+adb shell input keyevent KEYCODE_TV_INPUT - Simula a tecla de entrada da TV.
+adb shell input keyevent KEYCODE_STB_POWER - Simula a tecla de liga/desliga do decodificador.
+adb shell input keyevent KEYCODE_STB_INPUT - Simula a tecla de entrada do decodificador.
+adb shell input keyevent KEYCODE_AVR_POWER - Simula a tecla de liga/desliga do receptor AV.
+adb shell input keyevent KEYCODE_AVR_INPUT - Simula a tecla de entrada do receptor AV.
+adb shell input keyevent KEYCODE_PROG_RED - Simula a tecla vermelha do controle remoto.
+adb shell input keyevent KEYCODE_PROG_GREEN - Simula a tecla verde do controle remoto.
+adb shell input keyevent KEYCODE_PROG_YELLOW - Simula a tecla amarela do controle remoto.
+adb shell input keyevent KEYCODE_PROG_BLUE - Simula a tecla azul do controle remoto.
+adb shell input keyevent KEYCODE_APP_SWITCH - Simula a tecla de alternância de aplicativos recentes.
+adb shell input keyevent KEYCODE_BUTTON_1 - Simula o pressionamento do botão 1.
+adb shell input keyevent KEYCODE_BUTTON_2 - Simula o pressionamento do botão 2.
+adb shell input keyevent KEYCODE_BUTTON_3 - Simula o pressionamento do botão 3.
+adb shell input keyevent KEYCODE_BUTTON_4 - Simula o pressionamento do botão 4.
+adb shell input keyevent KEYCODE_BUTTON_5 - Simula o pressionamento do botão 5.
+adb shell input keyevent KEYCODE_BUTTON_6 - Simula o pressionamento do botão 6.
+adb shell input keyevent KEYCODE_BUTTON_7 - Simula o pressionamento do botão 7.
+adb shell input keyevent KEYCODE_BUTTON_8 - Simula o pressionamento do botão 8.
+adb shell input keyevent KEYCODE_BUTTON_9 - Simula o pressionamento do botão 9.
+adb shell input keyevent KEYCODE_BUTTON_10 - Simula o pressionamento do botão 10.
+adb shell input keyevent KEYCODE_BUTTON_11 - Simula o pressionamento do botão 11.
+adb shell input keyevent KEYCODE_BUTTON_12 - Simula o pressionamento do botão 12.
+adb shell input keyevent KEYCODE_BUTTON_13 - Simula o pressionamento do botão 13.
+adb shell input keyevent KEYCODE_BUTTON_14 - Simula o pressionamento do botão 14.
+adb shell input keyevent KEYCODE_BUTTON_15 - Simula o pressionamento do botão 15.
+adb shell input keyevent KEYCODE_BUTTON_16 - Simula o pressionamento do botão 16.
+adb shell input keyevent KEYCODE_LANGUAGE_SWITCH - Simula a tecla de alternância de idioma.
+adb shell input keyevent KEYCODE_MANNER_MODE - Simula a tecla de modo de maneira.
+adb shell input keyevent KEYCODE_3D_MODE - Simula a tecla de modo 3D.
+adb shell input keyevent KEYCODE_CONTACTS - Simula a tecla de contatos.
+adb shell input keyevent KEYCODE_CALENDAR - Simula a tecla de calendário.
+adb shell input keyevent KEYCODE_MUSIC - Simula a tecla de música.
+adb shell input keyevent KEYCODE_CALCULATOR - Simula a tecla de calculadora.
+adb shell input keyevent KEYCODE_MAIL - Simula a tecla de e-mail.
+adb shell input keyevent KEYCODE_BROWSER - Simula a tecla de navegador.
+adb shell input keyevent KEYCODE_MEDIA_AUDIO_TRACK - Simula a tecla de faixa de áudio de mídia.
+adb shell input keyevent KEYCODE_SETTINGS - Simula a tecla de configurações.
+adb shell input keyevent KEYCODE_TV_POWER - Simula a tecla de liga/desliga da TV.
+adb shell input keyevent KEYCODE_TV_INPUT - Simula a tecla de entrada da TV.
+adb shell input keyevent KEYCODE_STB_POWER - Simula a tecla de liga/desliga do decodificador.
+adb shell input keyevent KEYCODE_STB_INPUT - Simula a tecla de entrada do decodificador.
+adb shell input keyevent KEYCODE_AVR_POWER - Simula a tecla de liga/desliga do receptor AV.
+adb shell input keyevent KEYCODE_AVR_INPUT - Simula a tecla de entrada do receptor AV.
+adb shell input keyevent KEYCODE_PROG_RED - Simula a tecla vermelha do controle remoto.
+adb shell input keyevent KEYCODE_PROG_GREEN - Simula a tecla verde do controle remoto.
+adb shell input keyevent KEYCODE_PROG_YELLOW - Simula a tecla amarela do controle remoto.
+adb shell input keyevent KEYCODE_PROG_BLUE - Simula a tecla azul do controle remoto.
+adb shell input keyevent KEYCODE_APP_SWITCH - Simula a tecla de alternância de aplicativos recentes.
+adb shell input keyevent KEYCODE_SCROLL_LOCK - Simula a tecla de bloqueio de rolagem.
+adb shell input keyevent KEYCODE_INSERT - Simula a tecla de inserção.
+adb shell input keyevent KEYCODE_FORWARD_DEL - Simula a tecla de exclusão avançada.
+adb shell input keyevent KEYCODE_MEDIA_PLAY - Simula a tecla de reprodução de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PAUSE - Simula a tecla de pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE - Simula a tecla de reprodução/pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_STOP - Simula a tecla de parada de mídia.
+adb shell input keyevent KEYCODE_MEDIA_NEXT - Simula a tecla de próxima faixa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PREVIOUS - Simula a tecla de faixa anterior de mídia.
+adb shell input keyevent KEYCODE_MEDIA_REWIND - Simula a tecla de retrocesso de mídia.
+adb shell input keyevent KEYCODE_MEDIA_FAST_FORWARD - Simula a tecla de avanço rápido de mídia.
+adb shell input keyevent KEYCODE_MUTE - Simula a tecla de mudo.
+adb shell input keyevent KEYCODE_PAGE_UP - Simula a tecla de página para cima.
+adb shell input keyevent KEYCODE_PAGE_DOWN - Simula a tecla de página para baixo.
+adb shell input keyevent KEYCODE_PICTSYMBOLS - Simula a tecla de símbolos de imagem.
+adb shell input keyevent KEYCODE_SWITCH_CHARSET - Simula a tecla de alternância de conjunto de caracteres.
+adb shell input keyevent KEYCODE_BUTTON_A - Simula o pressionamento do botão A do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_B - Simula o pressionamento do botão B do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_C - Simula o pressionamento do botão C do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_X - Simula o pressionamento do botão X do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_Y - Simula o pressionamento do botão Y do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_Z - Simula o pressionamento do botão Z do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_L1 - Simula o pressionamento do botão L1 do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_R1 - Simula o pressionamento do botão R1 do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_L2 - Simula o pressionamento do botão L2 do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_R2 - Simula o pressionamento do botão R2 do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_THUMBL - Simula o pressionamento do botão analógico esquerdo do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_THUMBR - Simula o pressionamento do botão analógico direito do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_START - Simula o pressionamento do botão de início do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_SELECT - Simula o pressionamento do botão de seleção do controle de jogos.
+adb shell input keyevent KEYCODE_BUTTON_MODE - Simula o pressionamento do botão de modo do controle de jogos.
+adb shell input keyevent KEYCODE_VOLUME_DOWN - Simula a tecla de volume para baixo.
+adb shell input keyevent KEYCODE_VOLUME_UP - Simula a tecla de volume para cima.
+adb shell input keyevent KEYCODE_VOLUME_MUTE - Simula a tecla de mudo de volume.
+adb shell input keyevent KEYCODE_MEDIA_PLAY - Simula a tecla de reprodução de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PAUSE - Simula a tecla de pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE - Simula a tecla de reprodução/pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_STOP - Simula a tecla de parada de mídia.
+adb shell input keyevent KEYCODE_MEDIA_NEXT - Simula a tecla de próxima faixa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PREVIOUS - Simula a tecla de faixa anterior de mídia.
+adb shell input keyevent KEYCODE_MEDIA_REWIND - Simula a tecla de retrocesso de mídia.
+adb shell input keyevent KEYCODE_MEDIA_FAST_FORWARD - Simula a tecla de avanço rápido de mídia.
+adb shell input keyevent KEYCODE_POWER - Simula a tecla de energia.
+adb shell input keyevent KEYCODE_HOME - Simula a tecla Home.
+adb shell input keyevent KEYCODE_BACK - Simula a tecla Voltar.
+adb shell input keyevent KEYCODE_MENU - Simula a tecla Menu.
+adb shell input keyevent KEYCODE_SEARCH - Simula a tecla de pesquisa.
+adb shell input keyevent KEYCODE_CAMERA - Simula a tecla da câmera.
+adb shell input keyevent KEYCODE_FOCUS - Simula a tecla de foco.
+adb shell input keyevent KEYCODE_NOTIFICATION - Simula a tecla de notificação.
+adb shell input keyevent KEYCODE_MUTE - Simula a tecla de mudo.
+adb shell input keyevent KEYCODE_SETTINGS - Simula a tecla de configurações.
+adb shell input keyevent KEYCODE_POWERON - Simula a tecla de liga/desliga.
+adb shell input keyevent KEYCODE_POWEROFF - Simula a tecla de desligamento.
+adb shell input keyevent KEYCODE_TV - Simula a tecla de TV.
+adb shell input keyevent KEYCODE_TV_POWER - Simula a tecla de liga/desliga da TV.
+adb shell input keyevent KEYCODE_TV_INPUT - Simula a tecla de entrada da TV.
+adb shell input keyevent KEYCODE_STB_POWER - Simula a tecla de liga/desliga do decodificador.
+adb shell input keyevent KEYCODE_STB_INPUT - Simula a tecla de entrada do decodificador.
+adb shell input keyevent KEYCODE_AVR_POWER - Simula a tecla de liga/desliga do receptor AV.
+adb shell input keyevent KEYCODE_AVR_INPUT - Simula a tecla de entrada do receptor AV.
+adb shell input keyevent KEYCODE_HEADSETHOOK - Simula o pressionamento do botão de headset.
+adb shell input keyevent KEYCODE_MEDIA_AUDIO_TRACK - Simula a tecla de faixa de áudio de mídia.
+adb shell input keyevent KEYCODE_LANGUAGE_SWITCH - Simula a tecla de alternância de idioma.
+adb shell input keyevent KEYCODE_PAGE_UP - Simula a tecla de página para cima.
+adb shell input keyevent KEYCODE_PAGE_DOWN - Simula a tecla de página para baixo.
+adb shell input keyevent KEYCODE_PICTURE_SIZE - Simula a tecla de tamanho da imagem.
+adb shell input keyevent KEYCODE_ROTATE_SCREEN - Simula a tecla de rotação da tela.
+adb shell input keyevent KEYCODE_SCREENSHOT - Simula a tecla de captura de tela.
+adb shell input keyevent KEYCODE_BRIGHTNESS_DOWN - Simula a tecla de diminuição de brilho.
+adb shell input keyevent KEYCODE_BRIGHTNESS_UP - Simula a tecla de aumento de brilho.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_BATTERY_SAVER - Simula a tecla de economia de bateria.
+adb shell input keyevent KEYCODE_BRIGHTNESS_AUTO - Simula a tecla de ajuste de brilho automático.
+adb shell input keyevent KEYCODE_HOMEPAGE - Simula a tecla de página inicial.
+adb shell input keyevent KEYCODE_ASSIST - Simula a tecla de assistência.
+adb shell input keyevent KEYCODE_EJECT - Simula a tecla de ejeção.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_SLEEP - Simula a tecla de suspensão.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_NOTIFICATION - Simula a tecla de notificação.
+adb shell input keyevent KEYCODE_VOLUME_MUTE - Simula a tecla de mudo de volume.
+adb shell input keyevent KEYCODE_VOLUME_DOWN - Simula a tecla de volume para baixo.
+adb shell input keyevent KEYCODE_VOLUME_UP - Simula a tecla de volume para cima.
+adb shell input keyevent KEYCODE_MEDIA_PLAY - Simula a tecla de reprodução de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PAUSE - Simula a tecla de pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE - Simula a tecla de reprodução/pausa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_STOP - Simula a tecla de parada de mídia.
+adb shell input keyevent KEYCODE_MEDIA_NEXT - Simula a tecla de próxima faixa de mídia.
+adb shell input keyevent KEYCODE_MEDIA_PREVIOUS - Simula a tecla de faixa anterior de mídia.
+adb shell input keyevent KEYCODE_MEDIA_REWIND - Simula a tecla de retrocesso de mídia.
+adb shell input keyevent KEYCODE_MEDIA_FAST_FORWARD - Simula a tecla de avanço rápido de mídia.
+adb shell input keyevent KEYCODE_POWER - Simula a tecla de energia.
+adb shell input keyevent KEYCODE_HOME - Simula a tecla Home.
+adb shell input keyevent KEYCODE_BACK - Simula a tecla Voltar.
+adb shell input keyevent KEYCODE_MENU - Simula a tecla Menu.
+adb shell input keyevent KEYCODE_SEARCH - Simula a tecla de pesquisa.
+adb shell input keyevent KEYCODE_CAMERA - Simula a tecla da câmera.
+adb shell input keyevent KEYCODE_FOCUS - Simula a tecla de foco.
+adb shell input keyevent KEYCODE_NOTIFICATION - Simula a tecla de notificação.
+adb shell input keyevent KEYCODE_MUTE - Simula a tecla de mudo.
+adb shell input keyevent KEYCODE_SETTINGS - Simula a tecla de configurações.
+adb shell input keyevent KEYCODE_POWERON - Simula a tecla de liga/desliga.
+adb shell input keyevent KEYCODE_POWEROFF - Simula a tecla de desligamento.
+adb shell input keyevent KEYCODE_TV - Simula a tecla de TV.
+adb shell input keyevent KEYCODE_TV_POWER - Simula a tecla de liga/desliga da TV.
+adb shell input keyevent KEYCODE_TV_INPUT - Simula a tecla de entrada da TV.
+adb shell input keyevent KEYCODE_STB_POWER - Simula a tecla de liga/desliga do decodificador.
+adb shell input keyevent KEYCODE_STB_INPUT - Simula a tecla de entrada do decodificador.
+adb shell input keyevent KEYCODE_AVR_POWER - Simula a tecla de liga/desliga do receptor AV.
+adb shell input keyevent KEYCODE_AVR_INPUT - Simula a tecla de entrada do receptor AV.
+adb shell input keyevent KEYCODE_HEADSETHOOK - Simula o pressionamento do botão de headset.
+adb shell input keyevent KEYCODE_MEDIA_AUDIO_TRACK - Simula a tecla de faixa de áudio de mídia.
+adb shell input keyevent KEYCODE_LANGUAGE_SWITCH - Simula a tecla de alternância de idioma.
+adb shell input keyevent KEYCODE_PAGE_UP - Simula a tecla de página para cima.
+adb shell input keyevent KEYCODE_PAGE_DOWN - Simula a tecla de página para baixo.
+adb shell input keyevent KEYCODE_PICTURE_SIZE - Simula a tecla de tamanho da imagem.
+adb shell input keyevent KEYCODE_ROTATE_SCREEN - Simula a tecla de rotação da tela.
+adb shell input keyevent KEYCODE_SCREENSHOT - Simula a tecla de captura de tela.
+adb shell input keyevent KEYCODE_BRIGHTNESS_DOWN - Simula a tecla de diminuição de brilho.
+adb shell input keyevent KEYCODE_BRIGHTNESS_UP - Simula a tecla de aumento de brilho.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_BATTERY_SAVER - Simula a tecla de economia de bateria.
+adb shell input keyevent KEYCODE_BRIGHTNESS_AUTO - Simula a tecla de ajuste de brilho automático.
+adb shell input keyevent KEYCODE_HOMEPAGE - Simula a tecla de página inicial.
+adb shell input keyevent KEYCODE_ASSIST - Simula a tecla de assistência.
+adb shell input keyevent KEYCODE_EJECT - Simula a tecla de ejeção.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_SLEEP - Simula a tecla de suspensão.
+adb shell input keyevent KEYCODE_WAKEUP - Simula a tecla de despertar.
+adb shell input keyevent KEYCODE_NOTIFICATION - Simula a tecla de notificação.
+
+
+  List by Daniel Avilla
